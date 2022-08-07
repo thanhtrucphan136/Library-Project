@@ -1,0 +1,8 @@
+#book-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#book-display div{
+    border: 1px solid black;
+    width: 120px;
+}
