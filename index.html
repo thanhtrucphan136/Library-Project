@@ -12,37 +12,36 @@
     <header>
         <h1>My Library</h1>
     </header>
-    <div class="main-container">
-        <div class="popup" id="popup">
-            <form>
-                <h3>Add new book</h3>
-                <div>
-                    <input type="text" id="title" name="book_title" placeholder="Title">
-                </div>
-                <div>
-                    <input type="text" id="author" name="book_author" placeholder="Author">
-                </div>
-                <div> 
-                    <input type="number" id="page" name="book_page" placeholder="Numeber of Pages">
-                </div>
-                <div>
-                    <label for="status">Status</label>
-                    <select name="book_status" id="status">
-                        <option value="not-read">Not Read</option>
-                        <option value="reading">Reading</option>
-                        <option value="finished">Finished</option>
-                    </select>
-                </div>
-                <div class="submit-container">
-                    <button id="submit-btn" type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
-        <button id="add-btn">+ new book</button>
-        <div class="main-content">
-            <div id="book-display"></div>
-        </div>
+    <div class="popup" id="popup">
+        <form>
+            <h3>Add new book</h3>
+            <div>
+                <input type="text" id="title" name="book_title" placeholder="Title">
+            </div>
+            <div>
+                <input type="text" id="author" name="book_author" placeholder="Author">
+            </div>
+            <div> 
+                <input type="number" id="page" name="book_page" placeholder="Numeber of Pages">
+            </div>
+            <div>
+                <label for="status">Status</label>
+                <select name="book_status" id="status">
+                    <option value="not-read">Not Read</option>
+                    <option value="reading">Reading</option>
+                    <option value="finished">Finished</option>
+                </select>
+            </div>
+            <div class="submit-container">
+                <button id="submit-btn" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
+    <div class="main-container">
+        <button id="add-btn">+ new book</button>
+        <div id="book-display"></div> 
+    </div>
+    <div id="overlay" class="overlay"></div>
     <footer>by truc</footer>
    
 </body>

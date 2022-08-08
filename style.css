@@ -1,12 +1,11 @@
 body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
     align-items: center;
     background-color: rgb(210, 238, 246);
     margin: 0;
     font-family: sans-serif;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
 }
 header{
     color: rgb(29, 54, 118);
@@ -24,27 +23,42 @@ header{
     height: 50px;
     font-size: 20px;
     cursor: pointer;
+    margin-top: 20px;
 }
 #add-btn:hover{
     background-color: rgb(141, 199, 235);
 }
 .popup{
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     background-color: rgb(141, 199, 235);
     top: 0%;
-    left: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
     border-radius: 1em;
     width: 300px;
     height: 360px;
-    transform: scale(0.1);
     visibility: hidden;
+    text-align: center;
+    transition: 0.3s ease-in-out;
 }
 .popup-open{
-    position: absolute;
-    top: 15%;
-    left: 39.5%;
-    transform: scale(1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
     visibility: visible;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay-active{
+    display: block;
 }
 form{
     display: grid;
@@ -89,27 +103,27 @@ label{
 }
 #book-display{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-auto-rows: 180px;
     gap: 50px;
-    margin-top: 60px;
+    margin: 40px 100px;
 }
 .card{
     background-color: #fff;
     color: rgb(29, 54, 118);
     border-radius: 1em;
-    width: 220px;
-    height: 170px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    margin: 0 -10px;
 }
+
 .card div:first-child{
-    background-color: rgb(166, 209, 236);
     width: 220px;
     height: 50px;
-    border-radius: 1em 1em 0 0;
+    font-size: 18px;
     padding-top: 10px;
     display: flex;
     justify-content: center;
@@ -125,4 +139,5 @@ footer{
    width: 100%;
    text-align: center;
    padding: 5px 0;
+   align-self: end;
 }

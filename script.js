@@ -51,10 +51,11 @@ displayBook();
 
 const addBtn = document.getElementById('add-btn');
 addBtn.addEventListener('click', openPopup);
+const overLay = document.getElementById('overlay');
 
 function openPopup(){
     const popup = document.getElementById('popup');
     popup.classList.add('popup-open');
-    console.log('clicked');
+    overLay.classList.add('overlay-active');
 }
 
