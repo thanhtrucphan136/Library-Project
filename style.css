@@ -165,3 +165,12 @@ footer{
    padding: 5px 0;
    align-self: end;
 }
+.github{
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 3px;
+}
+.github:hover{
+    transform: scale(1.1) rotate(360deg);
+}
