@@ -11,13 +11,13 @@ Book.prototype.addBookToLibrary = function(){
     myLibrary.push(this);
 }
 
-const book1 = new Book ('book1sdfsadfsafsf','truc','23','read');
+const book1 = new Book ('In Search of Lost Time','Marcel Proust','123','read');
 book1.addBookToLibrary();
-const book2 = new Book ('book2asfasdfasdfsadfsdfasdfasfdasfsafasfsfdasfsafsf','trung', '234', 'not read');
+const book2 = new Book ('Ulysses','James Joyce', '234', 'not read');
 book2.addBookToLibrary();
-const book3 = new Book ('book3sdfdsafasdfafsadfssdfsadfsadfsdasfddsfsdfsd','trung', '24', 'read');
+const book3 = new Book ('One Hundred Years of Solitude','Gabriel Garcia', '224', 'read');
 book3.addBookToLibrary();
-const book4 = new Book ('book3sdfsdfsdsf','trung', '24', 'read');
+const book4 = new Book ('Hamlet','William Shakespeare', '224', 'read');
 book4.addBookToLibrary();
 
 const bookDisplay = document.getElementById('book-display');
@@ -47,6 +47,14 @@ function displayBook(){
         bookDisplay.appendChild(bookInfo);
     }
 }
-
 displayBook();
+
+const addBtn = document.getElementById('add-btn');
+addBtn.addEventListener('click', openPopup);
+
+function openPopup(){
+    const popup = document.getElementById('popup');
+    popup.classList.add('popup-open');
+    console.log('clicked');
+}
 
