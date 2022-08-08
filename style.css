@@ -86,6 +86,7 @@ form{
     display: grid;
     grid-template-rows: repeat(6,1fr);
     color: rgb(29, 54, 118);
+    justify-content: center;
 }
 input{
     border-radius: 1.5em;
@@ -113,7 +114,7 @@ label{
     background-color: #fff;
     color: rgb(29, 54, 118);
     width: 220px;
-    padding: 10px 0;
+    margin-bottom: 20px;
     font-size: 20px;
     cursor: pointer;
 }
