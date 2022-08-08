@@ -27,6 +27,7 @@ header{
 }
 #add-btn:hover{
     background-color: rgb(141, 199, 235);
+    transform: scale(1.05);
 }
 .popup{
     position: fixed;
@@ -35,12 +36,12 @@ header{
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
+    transition: 0.3s ease-in-out;
     border-radius: 1em;
     width: 300px;
     height: 360px;
     visibility: hidden;
     text-align: center;
-    transition: 0.3s ease-in-out;
 }
 .popup-open{
     top: 50%;
@@ -59,6 +60,27 @@ header{
 }
 .overlay-active{
     display: block;
+}
+.form-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x-btn{
+    border-radius: 50%;
+    border: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 91%;
+    top: 2%;
+    text-align: center;
+    color: rgb(29, 54, 118);
+    cursor: pointer;
+}
+.x-btn:hover{
+    background-color: rgb(210, 238, 246);
+    transform: scale(1.2);
 }
 form{
     display: grid;
@@ -97,6 +119,7 @@ label{
 }
 #submit-btn:hover{
     background-color: rgb(210, 238, 246);
+    transform: scale(1.05);
 }
 .main-container{
     text-align: center;

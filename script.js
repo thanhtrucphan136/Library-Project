@@ -59,3 +59,10 @@ function openPopup(){
     overLay.classList.add('overlay-active');
 }
 
+const xBtn = document.getElementById('x-btn');
+xBtn.addEventListener('click', closePopup);
+
+function closePopup(){
+    overLay.classList.remove('overlay-active');
+    popup.classList.remove('popup-open');
+}
