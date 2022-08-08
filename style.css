@@ -1,3 +1,8 @@
+:root{
+    --fontColor: rgb(29, 54, 118);
+    --skyBlue: rgb(166,209,236);
+    --shadow: rgba(0,0,0,0.16) 0px 3px 4px;
+}
 body{
     min-height: 100vh;
     align-items: center;
@@ -8,22 +13,24 @@ body{
     grid-template-rows: auto auto 1fr;
 }
 header{
-    color: rgb(29, 54, 118);
-    background-color: rgb(166, 209, 236);
+    color: var(--fontColor);
+    background-color: var(--skyBlue);
     display: flex;
     width: 100%;
     justify-content: center;
+    box-shadow: var(--shadow);
 }
 #add-btn{
     border: none;
     border-radius: 2em;
-    background-color: rgb(166, 209, 236);
-    color: rgb(29, 54, 118);
+    background-color: var(--skyBlue);
+    color: var(--fontColor);
     width: 150px;
     height: 50px;
     font-size: 20px;
     cursor: pointer;
     margin-top: 20px;
+    box-shadow: var(--shadow);
 }
 #add-btn:hover{
     background-color: rgb(141, 199, 235);
@@ -32,7 +39,7 @@ header{
 .popup{
     position: fixed;
     z-index: 1;
-    background-color: rgb(141, 199, 235);
+    background-color: var(--skyBlue);
     top: 0%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
@@ -42,6 +49,7 @@ header{
     height: 360px;
     visibility: hidden;
     text-align: center;
+    box-shadow: var(--shadow);
 }
 .popup-open{
     top: 50%;
@@ -75,8 +83,9 @@ header{
     left: 91%;
     top: 2%;
     text-align: center;
-    color: rgb(29, 54, 118);
+    color: var(--fontColor);
     cursor: pointer;
+    box-shadow: var(--shadow);
 }
 .x-btn:hover{
     background-color: rgb(210, 238, 246);
@@ -85,7 +94,7 @@ header{
 form{
     display: grid;
     grid-template-rows: repeat(6,1fr);
-    color: rgb(29, 54, 118);
+    color: var(--fontColor);
     justify-content: center;
 }
 input{
@@ -104,19 +113,16 @@ select{
     padding: 5px 5px;
     text-align: center;
 }
-label{
-    font-size: 15px;
-    text-align: right;
-}
 #submit-btn{
     border: none;
     border-radius: 2em;
     background-color: #fff;
-    color: rgb(29, 54, 118);
+    color: var(--fontColor);
     width: 220px;
     margin-bottom: 20px;
     font-size: 20px;
     cursor: pointer;
+    box-shadow: var(--shadow);
 }
 #submit-btn:hover{
     background-color: rgb(210, 238, 246);
@@ -134,7 +140,7 @@ label{
 }
 .card{
     background-color: #fff;
-    color: rgb(29, 54, 118);
+    color: var(--fontColor);
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -142,6 +148,7 @@ label{
     align-items: center;
     gap: 10px;
     margin: 0 -10px;
+    box-shadow: var(--shadow);
 }
 
 .card div:first-child{
@@ -158,8 +165,7 @@ label{
     hyphens: auto;
 }
 footer{
-   background-color: rgb(166, 209, 236);
-   color: rgb(29, 54, 118);
+   color: var(--fontColor);
    width: 100%;
    text-align: center;
    padding: 5px 0;
