@@ -57,15 +57,10 @@ const submitBtn = document.getElementById('submit-btn').addEventListener('click'
     const inputAuthor = document.getElementById('author').value;
     const inputPage = document.getElementById('page').value;
     const inputStatus = document.getElementById('status').value;
-    console.log('clicked');
-    console.log(inputTitle);
-    console.log(inputStatus);
     let newBook = new Book(inputTitle, inputAuthor, inputPage, inputStatus);
-    console.log(newBook);
     newBook.addBookToLibrary();
-    console.log(myLibrary);
     displayNewBook();
-    closePopup();
+    closePopup(e);
     const form = document.querySelector('.form');
     form.reset();
 });
@@ -91,7 +86,8 @@ function openPopup(){
 const xBtn = document.getElementById('x-btn');
 xBtn.addEventListener('click', closePopup);
 
-function closePopup(){
+function closePopup(e){
+    e.preventDefault();
     overLay.classList.remove('overlay-active');
     popup.classList.remove('popup-open');
 }
