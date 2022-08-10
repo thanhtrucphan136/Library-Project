@@ -1,5 +1,5 @@
 :root{
-    --fontColor: rgb(29, 54, 118);
+    --fontColor: rgb(28, 53, 117);
     --skyBlue: rgb(166,209,236);
     --shadow: rgba(0,0,0,0.16) 0px 3px 4px;
 }
@@ -82,7 +82,9 @@ header{
     position: absolute;
     left: 91%;
     top: 2%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--fontColor);
     cursor: pointer;
     box-shadow: var(--shadow);
@@ -164,6 +166,34 @@ select{
     word-wrap: break-word;
     hyphens: auto;
 }
+.status-btn{
+    border: none;
+    border-radius: 1em;
+    width: 80px;
+    height: 40px;
+    color: rgb(210, 238, 246);
+    cursor: pointer;
+}
+.status-btn:hover{
+    transform: scale(1.1);
+}
+.card-close-btn{
+    border: none;
+    border-radius: 50%;
+    background-color: var(--skyBlue);
+    position: relative;
+    margin-top: 10px;
+    left: 44%;
+    top: -2%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-close-btn:hover{
+    transform: scale(1.2);
+}
+
 footer{
    color: var(--fontColor);
    width: 100%;

@@ -39,11 +39,14 @@ Book.prototype.info = function(){
     cardStatus.classList.add('status-btn');
 
     if (cardStatus.textContent == 'Not Read'){
-        cardStatus.style.backgroundColor = 'red';
+        cardStatus.style.backgroundColor = '#ca3433';
+        cardStatus.style.color = '#d2bab5';
     }else if(cardStatus.textContent == 'Finished'){
-        cardStatus.style.backgroundColor = 'green';
+        cardStatus.style.backgroundColor = '#6fcd6f';
+        cardStatus.style.color = '#297b2a';
     }else{
-        cardStatus.style.backgroundColor = 'blue';
+        cardStatus.style.backgroundColor = '#a6d1ec';
+        cardStatus.style.color = '#1d3676';
     }
     cardStatus.onclick = () => changeStatus(cardStatus);
     
@@ -53,30 +56,15 @@ Book.prototype.info = function(){
     card.appendChild(cardPage);
     card.appendChild(cardStatus);
 
-    cardCloseBtn.onclick = () => removeCard(cardTitle.textContent);
+    cardCloseBtn.onclick = () => removeCard(card, cardTitle);
 
     card.classList.add('card');
     return card;
-}
-//let readingStatus = ['not read', 'reading', 'finished'];
-
-function changeStatus(readingStatus){
-    if (readingStatus.textContent == 'Not Read'){
-        readingStatus.style.backgroundColor = 'blue';
-        readingStatus.innerHTML = 'Reading'
-    }else if (readingStatus.textContent == 'Reading'){
-        readingStatus.style.backgroundColor = 'green';
-        readingStatus.innerHTML = 'Finished';
-    }else{
-        readingStatus.style.backgroundColor = 'red';
-        readingStatus.innerHTML = 'Not Read';
-    }
 }
 
 //display the library
 function displayLibrary(){
     for (const book of myLibrary){
-        if (book.title )
         bookInfo = book.info();
         bookDisplay.appendChild(bookInfo);
     }
@@ -123,4 +111,28 @@ function closePopup(e){
     e.preventDefault();
     overLay.classList.remove('overlay-active');
     popup.classList.remove('popup-open');
+}
+
+//remove book card
+function removeCard(card, bookTitle){
+    bookDisplay.removeChild(card);
+    let bookIndex = myLibrary.findIndex(book => `"${book.title}"` == bookTitle.textContent);
+    myLibrary.splice(bookIndex,1);
+}
+
+//change status and color button
+function changeStatus(readingStatus){
+    if (readingStatus.textContent == 'Not Read'){
+        readingStatus.style.backgroundColor = '#a6d1ec';
+        readingStatus.style.color = '#1d3676';
+        readingStatus.innerHTML = 'Reading'
+    }else if (readingStatus.textContent == 'Reading'){
+        readingStatus.style.backgroundColor = '#6fcd6f';
+        readingStatus.style.color = '#297b2a';
+        readingStatus.innerHTML = 'Finished';
+    }else{
+        readingStatus.style.backgroundColor = '#ca3433';
+        readingStatus.style.color = '#d2bab5';
+        readingStatus.innerHTML = 'Not Read';
+    }
 }
