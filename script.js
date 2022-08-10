@@ -122,17 +122,24 @@ function removeCard(card, bookTitle){
 
 //change status and color button
 function changeStatus(readingStatus){
+    let bookIndex = myLibrary.findIndex(book => book.status == readingStatus.textContent);
+    console.log(bookIndex);
+    console.log(myLibrary[bookIndex]);
     if (readingStatus.textContent == 'Not Read'){
         readingStatus.style.backgroundColor = '#a6d1ec';
         readingStatus.style.color = '#1d3676';
-        readingStatus.innerHTML = 'Reading'
+        readingStatus.innerHTML = 'Reading';
+        myLibrary[bookIndex].status = readingStatus.innerHTML;
     }else if (readingStatus.textContent == 'Reading'){
         readingStatus.style.backgroundColor = '#6fcd6f';
         readingStatus.style.color = '#297b2a';
         readingStatus.innerHTML = 'Finished';
+        myLibrary[bookIndex].status = readingStatus.innerHTML;
     }else{
         readingStatus.style.backgroundColor = '#ca3433';
         readingStatus.style.color = '#d2bab5';
         readingStatus.innerHTML = 'Not Read';
+        myLibrary[bookIndex].status = readingStatus.innerHTML;
     }
+    console.log(myLibrary[bookIndex]);
 }
