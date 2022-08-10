@@ -30,6 +30,7 @@ Book.prototype.info = function(){
     cardCloseBtn.classList.add('card-close-btn');
     let cardTitle = document.createElement('div');
     cardTitle.textContent = `"${this.title}"`;
+    cardTitle.classList.add('card-title');
     let cardAuthor = document.createElement('div');
     cardAuthor.textContent = `by ${this.author}`;
     let cardPage = document.createElement('div');

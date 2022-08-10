@@ -82,7 +82,8 @@ header{
     position: absolute;
     left: 91%;
     top: 2%;
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--fontColor);
@@ -135,12 +136,13 @@ select{
 }
 #book-display{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-auto-rows: 180px;
-    gap: 50px;
+    gap: 100px 50px;
     margin: 40px 100px;
 }
 .card{
+    height: 220px;
     background-color: #fff;
     color: var(--fontColor);
     border-radius: 1em;
@@ -153,11 +155,9 @@ select{
     box-shadow: var(--shadow);
 }
 
-.card div:first-child{
-    width: 220px;
+.card-title{
     height: 50px;
-    font-size: 18px;
-    padding-top: 10px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,15 +178,20 @@ select{
     transform: scale(1.1);
 }
 .card-close-btn{
+    padding: 0;
+    width: 20px;
+    height: 20px;
     border: none;
     border-radius: 50%;
     background-color: var(--skyBlue);
+    color: var(--fontColor);
     position: relative;
     margin-top: 10px;
     left: 44%;
     top: -2%;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
