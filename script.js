@@ -1,14 +1,55 @@
 let myLibrary = [];
 
-function Book(title, author, page, status){
-    this.title = title;
+class Book {
+    constructor(title,author,page,status){
+        this.title = title;
     this.author = author;
     this.page = page;
     this.status = status;
-}
-//add book to the library
-Book.prototype.addBookToLibrary = function(){
-    myLibrary.push(this);
+    }
+
+    addBookToLibrary(){
+        myLibrary.push(this);
+    }
+    info(){
+        let card = document.createElement('div');
+        let cardCloseBtn = document.createElement('button');
+        cardCloseBtn.textContent = 'x';
+        cardCloseBtn.classList.add('card-close-btn');
+        let cardTitle = document.createElement('div');
+        cardTitle.textContent = `"${this.title}"`;
+        cardTitle.classList.add('card-title');
+        let cardAuthor = document.createElement('div');
+        cardAuthor.textContent = `by ${this.author}`;
+        let cardPage = document.createElement('div');
+        cardPage.textContent = `${this.page} pages`;
+        let cardStatus = document.createElement('button');
+        cardStatus.textContent = `${this.status}`;
+        cardStatus.classList.add('status-btn');
+
+        if (cardStatus.textContent == 'Not Read'){
+            cardStatus.style.backgroundColor = '#ca3433';
+            cardStatus.style.color = '#d2bab5';
+        }else if(cardStatus.textContent == 'Finished'){
+            cardStatus.style.backgroundColor = '#6fcd6f';
+            cardStatus.style.color = '#297b2a';
+        }else{
+            cardStatus.style.backgroundColor = '#a6d1ec';
+            cardStatus.style.color = '#1d3676';
+        }
+        cardStatus.onclick = () => changeStatus(cardStatus);
+    
+        card.appendChild(cardCloseBtn);
+        card.appendChild(cardTitle);
+        card.appendChild(cardAuthor);
+        card.appendChild(cardPage);
+        card.appendChild(cardStatus);
+
+        cardCloseBtn.onclick = () => removeCard(card, cardTitle);
+
+        card.classList.add('card');
+        return card;
+    }
 }
 
 const book1 = new Book ('In Search of Lost Time','Marcel Proust','123','Reading');
@@ -22,46 +63,6 @@ book4.addBookToLibrary();
 
 const bookDisplay = document.getElementById('book-display');
 let bookInfo = '';
-
-Book.prototype.info = function(){
-    let card = document.createElement('div');
-    let cardCloseBtn = document.createElement('button');
-    cardCloseBtn.textContent = 'x';
-    cardCloseBtn.classList.add('card-close-btn');
-    let cardTitle = document.createElement('div');
-    cardTitle.textContent = `"${this.title}"`;
-    cardTitle.classList.add('card-title');
-    let cardAuthor = document.createElement('div');
-    cardAuthor.textContent = `by ${this.author}`;
-    let cardPage = document.createElement('div');
-    cardPage.textContent = `${this.page} pages`;
-    let cardStatus = document.createElement('button');
-    cardStatus.textContent = `${this.status}`;
-    cardStatus.classList.add('status-btn');
-
-    if (cardStatus.textContent == 'Not Read'){
-        cardStatus.style.backgroundColor = '#ca3433';
-        cardStatus.style.color = '#d2bab5';
-    }else if(cardStatus.textContent == 'Finished'){
-        cardStatus.style.backgroundColor = '#6fcd6f';
-        cardStatus.style.color = '#297b2a';
-    }else{
-        cardStatus.style.backgroundColor = '#a6d1ec';
-        cardStatus.style.color = '#1d3676';
-    }
-    cardStatus.onclick = () => changeStatus(cardStatus);
-    
-    card.appendChild(cardCloseBtn);
-    card.appendChild(cardTitle);
-    card.appendChild(cardAuthor);
-    card.appendChild(cardPage);
-    card.appendChild(cardStatus);
-
-    cardCloseBtn.onclick = () => removeCard(card, cardTitle);
-
-    card.classList.add('card');
-    return card;
-}
 
 //display the library
 function displayLibrary(){
